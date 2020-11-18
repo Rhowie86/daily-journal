@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ron Howie</title>
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <header>
+                <img class="logo" src="#" alt="#">
+                <h1 class="name">Ron Howie</h1>
+            </header>
+        <section>
+            <h2>Daily Journal</h2>
+            <form action="">
+                <fieldset class="form">
+                    <label for="journalDate">Date of entry</label>
+                    <input type="date" name="jouralDate" class="date-field" id="journalDate">
+                    <label for="conceptsCovered">Concepts Covered</label>
+                    <input type="text" name="conceptsCovered" class="concepts-field" id="conceptsCovered">
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea class="journal-entry" name="journalEntry" id="journalEntry" rows="10"></textarea>
+                    <label for="moodSelector">Mood:</label>
+                    <select name="mood" class="mood-selector" id="mood">
+                        <option value="Happy/Excited">Happy/Excited</option>
+                        <option value="Meh...it's fine.">Meh...it's fine.</option>
+                        <option value="Starting to worry...">Starting to worry...</option>
+                        <option value="I hate this...">I hate this...</option>
+                        <option value="This is hell...I live here now">This is hell...I live here now.</option></select>
+                    <button type="submit" class="button-record">Record Journal Entry</button>
+                </fieldset>
+            </form>
+        </section>
+        <div class="list-entries">
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <h6 class="footer">Ron Howie <a href="https://github.com/Rhowie86"> Git Hub</a> &copy;Ron Howie, NSS Cohort 45</h6>
+        </footer>
+        </main>
+
+        <script type="module" src="./scripts/main.js"></script>
+    </body>
+</html>
