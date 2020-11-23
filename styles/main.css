@@ -18,35 +18,34 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 2px;
 }
 
+
+
 .form {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	margin-right: 75%;
+	padding: 50px;
 }
 
 .date-field {
-	margin-right: 75em;
 	margin-bottom: 10px;
 }
 
 .concepts-field {
-	margin-right:70em;
 	margin-bottom: 10px;
 }
 
 .journal-entry {
-	margin-right:65em;
 	margin-bottom: 10px;
 }
 
 .mood-selector {
-	margin-right: 65em;
 	margin-bottom: 20px;
 }
 
 .button-record {
 	justify-content: space-around;
 	/* margin-left: 35%; */
-	margin-right: 75%;
+	/* margin-right: 75%; */
 }
