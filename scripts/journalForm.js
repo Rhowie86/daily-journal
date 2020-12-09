@@ -1,4 +1,7 @@
+import { saveEntry } from "./journalDataProvider.js"
+
 const contentTarget = document.querySelector(".journal-form");
+const eventHub = document.querySelector(".container")
 
 export const journalForm = () => {
   contentTarget.innerHTML = `<h2>Daily Journal</h2>
@@ -24,5 +27,22 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEntry"){
 
         let date = document.getElementById("journalDate")
+        let concepts = document.getElementById("conceptsCovered")
+        let entry = document.getElementById("journalEntry")
+        let mood = document.getElementById("mood")
+
+        if (date.value && concepts.value && entry.value && mood.value !== "") {
+            const newEntry = {
+                date: date.value,
+                concepts: concepts.value,
+                entry: entry.value,
+                mood: mood.value
+            }
+            saveEntry(newEntry)
+            date.value = ""
+            concepts.value = ""
+            entry.value = ""
+            mood.value = ""
+        }
     }
 })
