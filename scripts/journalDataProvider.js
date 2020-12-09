@@ -7,6 +7,33 @@
  */
 
 // This is the original data.
+const eventHub = document.querySelector(".container")
+
+export const getEntries = () => {
+    return fetch("http://localhost:8088/entries") // Fetch from the API
+        .then(response => response.json())  // Parse as JSON
+        .then(entries => { 
+            entries = parsedEntries
+            // What should happen when we finally have the array?
+        })
+}
+
+const dispatchStateChangeEvent = () => {
+    eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+}
+
+// Use `fetch` with the POST method to add your entry to your API
+fetch("http://localhost:8088/entries", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newJournalEntry)
+})
+    .then(getEntries())  // <-- Get all journal entries
+    .then(dispatchStateChangeEvent())  // <-- Broadcast the state change event
+
+
 const journal = [
     {
         id: 1,
@@ -21,6 +48,8 @@ const journal = [
     You export a function that provides a version of the
     raw data in the format that you want
 */
+let entries = []
+
 export const useJournalEntries = () => {
     const sortedByDate = journal.sort(
         (currentEntry, nextEntry) =>
