@@ -12,7 +12,7 @@ const eventHub = document.querySelector(".container")
 export const getEntries = () => {
     return fetch("http://localhost:8088/entries") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
-        .then(entries => { 
+        .then(parsedEntries => { 
             entries = parsedEntries
             // What should happen when we finally have the array?
         })
@@ -23,15 +23,16 @@ const dispatchStateChangeEvent = () => {
 }
 
 // Use `fetch` with the POST method to add your entry to your API
+export const saveEntry = (newEntry) => {
 fetch("http://localhost:8088/entries", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(newJournalEntry)
+    body: JSON.stringify(newEntry)
 })
     .then(getEntries())  // <-- Get all journal entries
-    .then(dispatchStateChangeEvent())  // <-- Broadcast the state change event
+    .then(dispatchStateChangeEvent()) } // <-- Broadcast the state change event
 
 
 const journal = [
