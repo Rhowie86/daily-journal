@@ -8,25 +8,11 @@
       "mood": "a mood"
     },
     {
-      "date": "2020-12-09",
-      "concepts": "api and event listeners",
-      "entry": "testing to see if this works at all...",
-      "mood": "This is hell...I live here now",
+      "date": "2020-12-10",
+      "concept": "save and update",
+      "content": "Save and update is working",
+      "mood": "Happy/Excited",
       "id": 2
-    },
-    {
-      "date": "2020-12-09",
-      "concepts": "api event listener",
-      "entry": "testing to see if this works at all...",
-      "mood": "This is hell...I live here now",
-      "id": 3
-    },
-    {
-      "date": "2020-12-09",
-      "concepts": "api and event listeners",
-      "entry": "testing testing",
-      "mood": "I hate this...",
-      "id": 4
     }
   ]
 }

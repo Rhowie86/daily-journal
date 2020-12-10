@@ -27,21 +27,21 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEntry"){
 
         let date = document.getElementById("journalDate")
-        let concepts = document.getElementById("conceptsCovered")
-        let entry = document.getElementById("journalEntry")
+        let concept = document.getElementById("conceptsCovered")
+        let content = document.getElementById("journalEntry")
         let mood = document.getElementById("mood")
 
-        if (date.value && concepts.value && entry.value && mood.value !== "") {
+        if (date.value && concept.value && content.value && mood.value !== "") {
             const newEntry = {
                 date: date.value,
-                concepts: concepts.value,
-                entry: entry.value,
+                concept: concept.value,
+                content: content.value,
                 mood: mood.value
             }
             saveEntry(newEntry)
             date.value = ""
-            concepts.value = ""
-            entry.value = ""
+            concept.value = ""
+            content.value = ""
             mood.value = ""
         }
     }
