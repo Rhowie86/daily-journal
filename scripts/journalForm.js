@@ -14,11 +14,14 @@ export const journalForm = () => {
     <textarea class="journal-entry" name="journalEntry" id="journalEntry" rows="10"></textarea>
     <label for="moodSelector">Mood:</label>
     <select name="mood" class="mood-selector" id="mood">
-        <option value="Happy/Excited">Happy/Excited</option>
-        <option value="Meh...it's fine.">Meh...it's fine.</option>
-        <option value="Starting to worry...">Starting to worry...</option>
-        <option value="I hate this...">I hate this...</option>
-        <option value="This is hell...I live here now">This is hell...I live here now.</option></select>
+    ${
+        allMoods.map(
+            (mood) => {
+                return `<option value="${ mood.id }">${ mood.label }</option>`
+            }
+        ).join("")
+    }
+        </select>
     <button type="submit" class="button-record" id="saveEntry">Record Journal Entry</button>
 </fieldset>`;
 };

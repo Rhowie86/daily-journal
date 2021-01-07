@@ -4,21 +4,21 @@
  */
 const eventHub = document.querySelector(".container")
 
-export const JournalEntryComponent = (entry) => {
+export const JournalEntryComponent = (entryObj) => {
     return `
         <section id="entry--${entry.id}" class="journalEntry">
             <div class="entries">
                 <p>
-                    ${entry.date}
+                    ${entryObj.date}
                 </p>
                 <p>
-                    ${entry.concept}
+                    ${entryObj.concept}
                 </p>
                 <p>
-                    ${entry.content}
+                    ${entryObj.content}
                 </p>
                 <p>
-                    ${entry.mood}
+                    ${entry.mood.label}
                 </p>
             </div>
         </section>

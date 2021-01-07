@@ -10,7 +10,7 @@
 const eventHub = document.querySelector(".container")
 
 export const getEntries = () => {
-    return fetch("http://localhost:8088/entries") // Fetch from the API
+    return fetch("http://localhost:8088/entries?_expand=moods") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(parsedEntries => { 
             entries = parsedEntries
