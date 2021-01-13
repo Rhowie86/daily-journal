@@ -1,9 +1,16 @@
-import { saveEntry } from "./journalDataProvider.js"
+import { saveEntry, deleteEntry } from "./journalDataProvider.js"
+import { getMoods, useMoods } from "./moodsProvider.js"
 
 const contentTarget = document.querySelector(".journal-form");
 const eventHub = document.querySelector(".container")
 
+
+
+
+
 export const journalForm = () => {
+    const allMoods = useMoods()
+    console.log(allMoods)
   contentTarget.innerHTML = `<h2>Daily Journal</h2>
        <fieldset class="form">
     <label for="journalDate">Date of entry</label>
@@ -23,6 +30,7 @@ export const journalForm = () => {
     }
         </select>
     <button type="submit" class="button-record" id="saveEntry">Record Journal Entry</button>
+    
 </fieldset>`;
 };
 
@@ -39,7 +47,7 @@ eventHub.addEventListener("click", clickEvent => {
                 date: date.value,
                 concept: concept.value,
                 content: content.value,
-                mood: mood.value
+                moodId: mood.value
             }
             saveEntry(newEntry)
             date.value = ""
@@ -49,3 +57,11 @@ eventHub.addEventListener("click", clickEvent => {
         }
     }
 })
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+        const [prefix, entryId] = clickEvent.target.id.split("--")
+        
+       deleteEntry(entryId)
+    }
+  })

@@ -1,11 +1,11 @@
 {
   "entries": [
     {
-      "id": 1,
-      "date": "12/09/2020",
-      "concept": "event listeners",
-      "content": "today we focused mostly on how to use event listeners. Andy showed me how to use payloads.",
-      "moodId": 1
+      "date": "2021-01-11",
+      "concept": "testing save",
+      "content": "tsting save",
+      "moodId": "1",
+      "id": 1
     }
   ],
   "moods": [
@@ -22,13 +22,12 @@
       "label": "Starting to worry..."
     },
     {
-      "id": 2,
+      "id": 4,
       "label": "I hate this..."
     },
     {
-      "id": 2,
-      "label": "This is hell...I live here now"
-    },
+      "id": 5,
+      "label": "this is hell...I live here now"
+    }
   ]
-  }
-
+}

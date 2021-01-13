@@ -10,7 +10,7 @@
 const eventHub = document.querySelector(".container")
 
 export const getEntries = () => {
-    return fetch("http://localhost:8088/entries?_expand=moods") // Fetch from the API
+    return fetch("http://localhost:8088/entries?_expand=mood") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(parsedEntries => { 
             entries = parsedEntries
@@ -31,9 +31,19 @@ fetch("http://localhost:8088/entries", {
     },
     body: JSON.stringify(newEntry)
 })
-    .then(getEntries())  // <-- Get all journal entries
-    .then(dispatchStateChangeEvent()) } // <-- Broadcast the state change event
+    .then(getEntries)  // <-- Get all journal entries
+    .then(dispatchStateChangeEvent) } // <-- Broadcast the state change event
 
+export const deleteEntry = entryId => {
+    fetch(`http://localhost:8088/entries/${entryId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+}
 
 // const journal = [
 //     {

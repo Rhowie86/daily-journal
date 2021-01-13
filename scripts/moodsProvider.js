@@ -5,7 +5,7 @@ export const useMoods = () => {
 }
 
 export const getMoods = () => {
-    return fetch("https://localhost:8088/moods")
+    return fetch("http://localhost:8088/moods")
         .then(response => response.json())
         .then(
             parsedMoods => {
